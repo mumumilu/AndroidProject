@@ -1,0 +1,108 @@
+/* pages/cart/cart.wxss */
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 236, 236);
+}
+
+.item{
+    width: 100%;
+    height: 15vh;
+    margin: 2vh 0;
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.item image{
+    height: 18vw;
+    width: 18vw;
+    margin: 2vh;
+}
+
+.content view{
+    margin-top: 0.8vw;
+    margin-left: 1vw;
+}
+
+.name{
+    font-size: 4vw;
+    color: #888;
+    font-weight: bolder;
+}
+
+.price{
+    font-size: 3.3vw;
+    color: #888;
+}
+
+.quantity{
+    width: 1vh;
+    position: relative;
+    background-color: rgb(238, 236, 236);
+    padding: 1px 10px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.remove{
+    width: 4vh;
+    height: 4vh;
+    position: fixed;
+    right: 2vh;
+    border-radius: 50%;
+    border: 1px solid red;
+    box-sizing: border-box;
+    color: red;
+    text-align: center;
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.total{
+    height: 8vh;
+    width: 100%;
+    background-color: white;
+    margin: 3vh 0;
+    display: flex;
+    align-items: center;
+}
+
+.total view{
+    margin-top: 0.8vw;
+    margin-left: 1vh;
+    text-align: center;
+    display: flex;
+}
+
+.totalNum{
+    font-size: 3.5vw;
+    color: #666;
+}
+
+.totalPrice{
+    font-size: 2.5vh;
+    color: #666;
+    line-height: 0;
+}
+
+.money{
+    font-size: 6.4vw;
+    color: #ff6700;
+    font-weight: 700;
+}
+
+.buy{
+    width: 10vh;
+    height: 100%;
+    border-radius: 0;
+    background-color: #ff5934;
+    color: white;
+    font-weight: bolder;
+    font-size: 5vw;
+    text-align: center;
+    line-height: 8vw;
+}

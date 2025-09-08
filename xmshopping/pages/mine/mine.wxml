@@ -1,0 +1,29 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+    <view class="left">
+        <image src="/img/logo.png" mode=""/>
+        <view class="proverb">让每个人都能享受科技的乐趣</view>
+    </view>
+    <view class="right" wx:if="{{isLogged}}">
+        <view class="user-info">name</view>
+        <view class="phone">phone</view>
+        <view class="address">address</view>
+    </view>
+    <view class="content">
+        <view class="payList">订单列表
+            <view wx:for="{{payList}}" class="item">
+                <image src="/img/{{item.goodsImg}}" mode=""/>
+                <view class="content">
+                    <view class="name">{{item.goodsName}}</view>
+                    <view class="price">￥{{item.goodsPrice}} x {{item.quantity}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="login" wx:if="{{!isLogged}}">
+        <text>您还未登录，请先登录！</text>
+        <button bind:tap="toLog">去登录</button>
+    </view>
+    <button bind:tap="logout" wx:if="{{isLogged}}">退出登录</button>
+    
+</view>

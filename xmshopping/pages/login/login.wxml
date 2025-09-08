@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+    <view class="logo"><image src="/img/logo.png" mode=""/></view>
+    <view class="proverb">让每个人都能享受科技的乐趣</view>
+    <view class="content">
+        <view class="ps">小米账号登录</view>
+        <view class="put">
+            <input type="number" placeholder="请输入手机号码" bindinput="inphone" value="{{telId}}"/>
+            <input type="password" placeholder="请输入密码" bindinput="inpswd" value="{{password}}"/>
+        </view>
+        <button bind:tap="login" class="login">登录</button>
+        <button bind:tap="toReg" class="register">注册</button>
+    </view>
+</view>

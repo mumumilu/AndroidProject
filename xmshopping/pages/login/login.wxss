@@ -1,0 +1,52 @@
+/* pages/login/login.wxss */
+.logo{
+    display: flex;
+    justify-content: center;
+}
+
+.container image{
+    width: 20vh;
+    height: 20vh;
+}
+
+.proverb{
+    color: #888;
+    font-size: 2.5vh;
+    text-align: center;
+    margin-top: 2vh;
+}
+
+.content{
+    margin-left: 5vh;
+    margin-top: 4vh;
+}
+
+.content view{
+    margin-top: 2vh;
+    margin-bottom: 3.5vh;
+}
+
+.ps{
+    font-size: 3.5vh;
+    font-weight: bolder;
+}
+
+input{
+    width: 80vw;
+    height: 8vw;
+    border-radius: 3vh;
+    margin-top: 2vh;
+    padding: 10px;
+    background-color: rgb(238, 236, 236);
+    font-size: 2vh;
+}
+
+.login{
+    background-color: rgb(84, 190, 84);
+    color: white;
+}
+
+.register{
+    background-color: rgb(238, 236, 236);
+    color: rgb(84, 190, 84);
+}
