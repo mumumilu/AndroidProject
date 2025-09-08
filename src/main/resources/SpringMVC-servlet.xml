@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+	    http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <context:property-placeholder location="classpath:mysqldb.properties"/>
+    <bean id="db_dataSource_bean" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${db.url}"/>
+        <property name="driverClassName" value="${db.driver}"/>
+        <property name="username" value="${db.username}"/>
+        <property name="password" value="${db.password}"/>
+        <property name="minIdle" value="${druid.minPoolSize}"/>
+        <property name="maxActive" value="${druid.maxPoolSize}"/>
+        <property name="initialSize" value="${druid.initialPoolSize}"/>
+        <!--配置log4j，可查看SQL执行日志-->
+        <!--        <property name="filters" value="log4j"/>-->
+    </bean>
+    <bean id="sqlSessionFactory_bean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="db_dataSource_bean"/>
+        <property name="configLocation" value="classpath:MybatisConfig.xml"/>
+    </bean>
+    <bean id="mapper_bean" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory_bean"/>
+        <property name="basePackage" value="cn.ssm.right.mapper"/>
+    </bean>
+
+    <!-- 自动注册RequestMappingHandlerMapping与RequestMappingHandlerAdapter两个Bean，
+        可将json字符串自动转为实体类 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+    <context:component-scan base-package="cn.ssm.right.controller"/>
+    <context:component-scan base-package="cn.ssm.right.service"/>
+
+    <!-- 声明多部分文件上传解析器 ，并对其属性进行注入 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="2097152" /> <!-- 104857600上传最大容量 -->
+        <property name="maxInMemorySize" value="4096" />
+        <property name="defaultEncoding" value="UTF-8"/>  <!-- 编码方式 -->
+    </bean>
+
+    <!-- 当web.xml中url-pattern为"/"，使用WEB-INF保存动态资源时，静态资源映射 -->
+    <mvc:resources location="/res/" mapping="/res/**" cache-period="31556926"/>
+
+    <!-- 对模型视图名称的解析，即在模型视图名称添加前后缀 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/view/" p:suffix=".jsp"/>
+</beans>
