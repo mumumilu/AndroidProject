@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">拾物App</string>
+    <string name="name">姓 名</string>
+    <string name="phone">手机号码</string>
+    <string name="wechat">微信号</string>
+    <string name="address">通信地址</string>
+    <string name="title">添加一条服务信息</string>
+    <string name="addok">确 定</string>
+    <string name="addno">取 消</string>
+</resources>

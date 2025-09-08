@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.connectivitymanagerdemo">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/applab"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/applab"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ConnectivityManagerDemo"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.mainly.AppMain"/>
+        <activity android:name=".Register"/>
+        <activity android:name="com.example.mainly.Context_Main"/>
+        <activity android:name="com.example.mainly.EditPage"/>
+        <activity android:name="com.example.addpage.AddLostPage"/>
+        <activity android:name="com.example.addpage.AddPickPage"/>
+        <activity android:name="com.example.addpage.PickRecordPage"/>
+        <activity android:name="com.example.addpage.LostRecordPage"/>
+        <activity android:name="com.example.addpage.LostDescPage"/>
+        <activity android:name="com.example.addpage.PickDescPage"/>
+
+    </application>
+
+
+</manifest>

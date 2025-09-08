@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/international_1"
+        android:title="主页" />
+
+    <item
+        android:id="@+id/navigation_pick"
+        android:icon="@drawable/edit_0"
+        android:title="失物" />
+
+    <item
+        android:id="@+id/navigation_lost"
+        android:icon="@drawable/view_0"
+        android:title="拾物" />
+
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/user_0"
+        android:title="我的" />
+</menu>
